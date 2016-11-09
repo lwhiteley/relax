@@ -5,6 +5,7 @@ import stylesManager from 'helpers/styles-manager';
 import traverseChildren from 'helpers/traverser/children';
 import traverser from 'helpers/traverser';
 import Component from 'components/component';
+import ElementLoading from 'components/element-loading';
 import get from 'lodash.get';
 import React, {PropTypes} from 'react';
 import Portal from 'components/portal';
@@ -40,13 +41,23 @@ export default class Viewer extends Component {
 
       this.updateStylesMap();
     } else {
-      result = 'Loading';
+      result = this.renderLoadingScreen();
     }
 
     return (
       <div>
         {result}
       </div>
+    );
+  }
+
+  renderLoadingScreen () {
+    return (
+        <ElementLoading style={{height: '100%'}}>
+          <div>
+            {"Loading"}
+          </div>
+        </ElementLoading>
     );
   }
 
