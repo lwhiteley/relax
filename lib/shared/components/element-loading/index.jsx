@@ -11,7 +11,7 @@ export default class ElementLoading extends Component {
 
   render () {
     return (
-      <div className={styles.root}>
+      <div className={styles.root} style={this.props.style}>
         <div className={styles.center}>
           <Spinner />
           <span className={styles.loading}>
