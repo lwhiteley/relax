@@ -8,6 +8,7 @@ import Component from 'components/component';
 import get from 'lodash.get';
 import React, {PropTypes} from 'react';
 import Portal from 'components/portal';
+import PageNotFound from 'components/page-not-found';
 
 const defaultStyleClassMap = {};
 export default class Viewer extends Component {
@@ -40,7 +41,7 @@ export default class Viewer extends Component {
 
       this.updateStylesMap();
     } else {
-      result = 'Loading';
+      result = <PageNotFound data={this.props}/>;
     }
 
     return (
